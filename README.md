@@ -1,54 +1,59 @@
-# React + TypeScript + Vite
+# Autosc Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React + TypeScript project built with Vite, focused on modern UI design and interactive features.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## About The Project
 
-## Expanding the ESLint configuration
+Autosc Website is a self-training React application designed to practice and showcase modern web UI design using CSS and React components. The project includes key features such as:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Responsive and modern UI layouts
+- Interactive Shop and Achievements components
+- State management with React hooks and localStorage persistence
+- TypeScript for type safety and better developer experience
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+This project helps improve skills in React, TypeScript, and UI/UX design while building a functional web app.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Features
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- **Modern UI Design:** Responsive layouts and polished styling using CSS and Canva-inspired design principles.
+- **Shop Component:** Allows users to purchase upgrades with dynamic pricing and state persistence.
+- **Achievements Component:** Tracks user progress and achievements with interactive UI.
+- **State Persistence:** Uses `localStorage` to save coins, upgrades, clicks, and worker power between sessions.
+- **TypeScript & React Hooks:** Strong typing and hooks like `useState` and `useEffect` for state and side effects.
+- **Version Control:** Managed with Git and hosted on GitHub for collaboration and versioning.
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v16 or higher recommended)
+- npm or yarn package manager
+
+## Installation & Running the Project
+
+Since this is a React + Vite project, you can follow these steps to install and run it locally:
+
+1. **Prerequisites**: Make sure you have [Node.js](https://nodejs.org/en/download/) installed (which includes npm).
+
+2. **Clone the repository**:
+
+Installation & Running the Project
+Since this is a React + Vite project, you can follow these steps to install and run it locally:
+Prerequisites: Make sure you have Node.js installed (which includes npm).
+
+## Clone the repository:
+```git clone https://github.com/Marmo77/autosc_Website.git```
+
+```cd autosc_Website```
+## Install dependencies:
+```npm install```
+## Run the development server:
+```npm run dev```
+
+*Open your browser at the URL shown in the terminal (usually http://localhost:5173) to see the app in action.*
