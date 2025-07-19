@@ -22,8 +22,10 @@ Now I'm going to upgrade it, **but** yes... I'm programming for 4 years and star
 
 ## 🖼️ Preview
 
-![Snippet1](./public/screenshot.png)  
-_
+![Snippet1](https://github.com/Marmo77/carservice-website/blob/main/src/assets/imgs/public/snippet1.jpg)
+![Snippet1](https://github.com/Marmo77/carservice-website/blob/main/src/assets/imgs/public/snippet2.jpg)
+![Snippet1](https://github.com/Marmo77/carservice-website/blob/main/src/assets/imgs/public/snippet3.jpg)
+
 
 ---
 
@@ -44,6 +46,7 @@ _
 
 **This website is *NOT FINISHED*, I am going to finish it but as moment i am writing it, it has a lot to add to make it fully. (19.07.2025)**
 *In my free time I'm going to work on it piece by piece*
+- Website is in Polish language, *All references to other companies or other people are provided and are not included here intentionally.*
 ---
 
 ## 🚀 Installation & Running the Project
