@@ -3,7 +3,7 @@ import { FiMenu, FiX } from 'react-icons/fi';
 import { FaFacebookF, FaInstagram } from 'react-icons/fa';
 import {motion, AnimatePresence} from 'framer-motion'
 import { HiOutlinePhone, HiOutlineLocationMarker } from 'react-icons/hi';
-
+import { phoneNumber} from '../../data/data'
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -45,7 +45,7 @@ const Navbar = () => {
           <div className="flex items-center gap-6 text-sm">
             <div className="flex items-center gap-2 group">
               <HiOutlinePhone className="text-highlight transition-all group-hover:text-contrast" />
-              <span className="group-hover:text-contrast transition-all">691 542 870</span>
+              <span className="group-hover:text-contrast transition-all">Phone</span>
             </div>
             <div className="flex items-center gap-2 group">
               <HiOutlineLocationMarker className="text-highlight transition-all group-hover:text-contrast" />
