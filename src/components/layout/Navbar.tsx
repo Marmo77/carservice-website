@@ -7,21 +7,26 @@ import { HiOutlinePhone, HiOutlineLocationMarker } from 'react-icons/hi';
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  // Hysteresis thresholds
+  const SCROLL_ON = 16; // px
+  const SCROLL_OFF = 4; // px
 
   useEffect(() => {
-    // const handleBack = () =>{
-    //   if(window.scrollY < 25 && window.scrollY > 5){
-    //     console.log("essa")
-    //     window.scrollTo(0, 0);
-    //   }
-      
+    let lastScrolled = scrolled;
     const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
+      const y = window.scrollY;
+      if (!lastScrolled && y > SCROLL_ON) {
+        setScrolled(true);
+        lastScrolled = true;
+      } else if (lastScrolled && y < SCROLL_OFF) {
+        setScrolled(false);
+        lastScrolled = false;
+      }
     };
-    // window.addEventListener('scroll', handleBack)
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    // eslint-disable-next-line
+  }, [scrolled]);
 
   const menuItems = [
     ['Strona główna', ""],
@@ -40,7 +45,7 @@ const Navbar = () => {
           <div className="flex items-center gap-6 text-sm">
             <div className="flex items-center gap-2 group">
               <HiOutlinePhone className="text-highlight transition-all group-hover:text-contrast" />
-              <span className="group-hover:text-contrast transition-all">882 917 789</span>
+              <span className="group-hover:text-contrast transition-all">691 542 870</span>
             </div>
             <div className="flex items-center gap-2 group">
               <HiOutlineLocationMarker className="text-highlight transition-all group-hover:text-contrast" />
@@ -63,10 +68,10 @@ const Navbar = () => {
       <div className={`max-w-site mx-auto px-4 py-3 flex justify-between items-center transition-all ${scrolled ? 'py-3' : 'py-4'}`}>
         {/* Logo with gold accent */}
         <div className="flex items-center">
-          <div className="text-2xl font-bold tracking-wider text-contrast font-Lexend uppercase mr-2">
-            auto<span className="text-highlight">scan</span>
+          <div className="text-2xl font-bold tracking-wider text-contrast font-Lexend uppercase mr-1">
+            Twój<span className="text-highlight">Mechanik</span>
           </div>
-          <span className="text-xs text-highlight font-light tracking-widest">.pl</span>
+          <span className="text-xs text-highlight font-light tracking-widest self-end py-[3px]">.pl</span>
         </div>
 
         {/* Desktop Menu - Gold underline effect */}

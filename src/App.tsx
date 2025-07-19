@@ -10,7 +10,7 @@ function App() {
   return (
     <>
     <BrowserRouter>
-    {/* Poprzednia strona grudzien 2013r. */}
+    {/* Poprzednia strona grudzien 2013r. www.autoscan.pl */}
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
