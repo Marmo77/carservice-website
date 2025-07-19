@@ -20,6 +20,7 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
+    {/* credits: https://www.github.com/Marmo77/carservice-website */}
     </>
   );
 }

@@ -1,7 +1,7 @@
 import { FaFacebookF, FaInstagram, FaYoutube, FaLinkedinIn } from 'react-icons/fa';
 import { HiOutlineMail, HiOutlinePhone, HiOutlineLocationMarker } from 'react-icons/hi';
 import { FiClock } from 'react-icons/fi';
-
+import { address, companyMail, companyName, facebookUrl, githubCredit, instagramUrl, phoneNumber } from '../../data/data';
 const Footer = () => {
   return (
     <footer className="bg-secondary pt-12 pb-8 border-t border-border" id='kontakt'>
@@ -9,7 +9,7 @@ const Footer = () => {
         {/* Column 1 - Logo & Description */}
         <div className="space-y-4">
           <div className="text-2xl font-bold text-contrast">
-            AUTO<span className="text-highlight">SCAN</span>.PL
+            {companyName.slice(0,4)}<span className="text-highlight">{companyName.slice(4,12)}</span>.PL
           </div>
           <p className="text-light text-sm">
             Kompleksowa obsługa samochodów od diagnostyki po tuning profesjonalnej klasy.
@@ -18,28 +18,28 @@ const Footer = () => {
           {/* Social Media */}
           <div className="flex gap-4 pt-2">
             <a 
-              href="#" 
+              href={facebookUrl} target='_blank'
               className="p-2 rounded-full bg-surface hover:bg-highlight transition-all group"
               aria-label="Facebook"
             >
               <FaFacebookF className="text-light group-hover:text-primary text-sm" />
             </a>
             <a 
-              href="#" 
+              href={instagramUrl} target='_blank'
               className="p-2 rounded-full bg-surface hover:bg-highlight transition-all group"
               aria-label="Instagram"
             >
               <FaInstagram className="text-light group-hover:text-primary text-sm" />
             </a>
             <a 
-              href="#" 
+              href={githubCredit} target='_blank'
               className="p-2 rounded-full bg-surface hover:bg-highlight transition-all group"
               aria-label="YouTube"
             >
               <FaYoutube className="text-light group-hover:text-primary text-sm" />
             </a>
             <a 
-              href="#" 
+              href={githubCredit} target='_blank'
               className="p-2 rounded-full bg-surface hover:bg-highlight transition-all group"
               aria-label="LinkedIn"
             >
@@ -91,18 +91,21 @@ const Footer = () => {
           <ul className="space-y-3 text-sm">
             <li className="flex items-start gap-3">
               <HiOutlineLocationMarker className="text-highlight mt-0.5 flex-shrink-0" />
-              <span className="text-light">ul. Przemysłowa 12<br />00-001 Warszawa</span>
+              <div className='flex flex-col gap-1'>
+                <p className="text-light">{address.slice(0, address.indexOf(","))}</p>
+                <p className="text-light">{address.slice(address.indexOf(",") +1).trim()}</p>
+              </div>
             </li>
             <li className="flex items-center gap-3">
               <HiOutlinePhone className="text-highlight" />
               <a href="tel:+48882917789" className="text-light hover:text-highlight transition">
-                882 917 789
+                {phoneNumber}
               </a>
             </li>
             <li className="flex items-center gap-3">
               <HiOutlineMail className="text-highlight" />
               <a href="mailto:kontakt@auto-scan.pl" className="text-light hover:text-highlight transition">
-                kontakt@auto-scan.pl
+                {companyMail}
               </a>
             </li>
             <li className="flex items-center gap-3">
@@ -137,7 +140,7 @@ const Footer = () => {
 
       {/* Copyright */}
       <div className="border-t border-border mt-8 pt-6 text-center text-muted text-xs">
-        <p>© {new Date().getFullYear()} Auto-Scan.pl. Wszelkie prawa zastrzeżone.</p>
+        <p>© {new Date().getFullYear()} {companyName}.pl Wszelkie prawa zastrzeżone.</p>
         <p className="mt-1">
           <a href="#" className="hover:text-highlight transition">Polityka prywatności</a> | 
           <a href="#" className="hover:text-highlight transition ml-2">Regulamin</a>
