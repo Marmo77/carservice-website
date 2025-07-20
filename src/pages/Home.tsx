@@ -13,7 +13,13 @@ import { WhyUs } from '../components/sections/WhyUs';
 const Home = () => {
   return (
     <>
-      <Hero />
+      <Hero 
+      title='PROFESJONALNE DIAGNOSTYKA SAMOCHODOWA'
+      subtitle='Nowoczesne rozwiązania i ekspercka wiedza dla Twojego pojazdu'
+      ctaText='UMÓW DIAGNOSTYKĘ'
+      ctaLink='#kontakt'
+      goldWordsStart={1}
+      />
       <CookieBanner/>
       <Services />
       {/* <AppointmentForm/> */}

@@ -3,7 +3,7 @@ import Layout from './components/layout/Layout';
 import Home from './pages/Home';
 // import {Helmet} from 'react-helmet'
 // import ChipTuningPage from './pages/ChipTuningPage';
-// import ServicePage from './pages/ServicePage';
+import ServicePage from './pages/ServicePage';
 // import ContactPage from './pages/ContactPage';
 
 function App() {
@@ -14,8 +14,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          {/* <Route path="chip-tuning" element={<ChipTuningPage />} />
           <Route path="serwis" element={<ServicePage />} />
+          {/* <Route path="chip-tuning" element={<ChipTuningPage />} />
           <Route path="kontakt" element={<ContactPage />} /> */}
         </Route>
       </Routes>

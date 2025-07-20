@@ -29,12 +29,12 @@ const Navbar = () => {
   }, [scrolled]);
 
   const menuItems = [
-    ['Strona główna', ""],
-    ['Sprzedaż samochodów', "sprzedaz samochodow"],
-    ['Serwis', 'serwis'],
-    ['V-tech/chip tuning', "chip tuning vtech"],
-    ['Autoholowanie', "pomoc drogowa"],
-    ['Kontakt', "kontakt"],
+    ['Strona główna', "/"],
+    ['Sprzedaż samochodów', "/sprzedaz samochodow"],
+    ['Serwis', '/serwis'],
+    ['V-tech/chip tuning', "#chip tuning vtech"],
+    ['Autoholowanie', "#pomoc drogowa"],
+    ['Kontakt', "#kontakt"],
   ];
 
   return (
@@ -47,7 +47,7 @@ const Navbar = () => {
               <div className="flex items-center gap-2 group">
                   <HiOutlinePhone className="text-highlight transition-all group-hover:text-contrast" />
                   <span className="group-hover:text-contrast transition-all">{phoneNumber}</span>
-              </div>
+              </div> 
             </a>
             <a href={`${GoogleMaps}`} target='_blank'>
               <div className="flex items-center gap-2 group">
@@ -84,7 +84,7 @@ const Navbar = () => {
           {menuItems.map((item, i) => (
             <motion.a
               key={i}
-              href={`#${item[1].toLowerCase().replace(/\s/g, '-')}`}
+              href={`${item[1].toLowerCase().replace(/\s/g, '-')}`}
               className="relative text-light py-1 px-2"
               whileHover={{ color: '#D4AF37' }}
             >
