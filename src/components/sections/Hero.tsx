@@ -5,31 +5,42 @@ import hero2 from '../../assets/imgs/hero_img/2.jpg'
 import hero3 from '../../assets/imgs/hero_img/3.jpg'
 import hero4 from '../../assets/imgs/hero_img/4.jpg'
 
+interface HeroProps {
+  title?: string;
+  subtitle?: string;
+  ctaText?: string;
+  ctaLink?: string;
+  goldWordsStart?: number; // Index of the first word to be highlighted in gold
+  breakAfterWord?: number; // Index of the word after line break
+}
 
-const Hero = () => {
+const defaultTitle = "PROFESJONALNE DIAGNOSTYKA SAMOCHODOWA";
+const defaultSubtitle = "Nowoczesne rozwiązania i ekspercka wiedza dla Twojego pojazdu";
+const defaultCtaText = "UMÓW DIAGNOSTYKĘ";
+const defaultCtaLink = "#kontakt";
+const defaultgoldWordsStart = 1;
+const defaultBreakAfterWord = -1; // -1 means no break
+
+const Hero = ({
+  title = defaultTitle,
+  subtitle = defaultSubtitle,
+  ctaText = defaultCtaText,
+  ctaLink = defaultCtaLink,
+  goldWordsStart = defaultgoldWordsStart,
+  breakAfterWord = defaultBreakAfterWord,
+}: HeroProps) => {
   const [currentImage, setCurrentImage] = useState(0);
-  const images = [
-    hero1,
-    hero2,
-    hero3,
-    hero4,
-  ]
-  // const befImg = '../../assets/imgs/hero_img/'
-  // const images: string[] = [];
-  // for(let i = 1 ; i <= 4; i++){
-  //   images.push(befImg+i+".jpg")
-  // }
+  const images = [hero1, hero2, hero3, hero4];
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % images.length);
     }, 5000);
-    
     return () => clearInterval(interval);
-  }, []);
+  }, [images.length]);
 
   return (
-    <div className="relative h-screen w-full overflow-hidden" id='#'>
+    <div className="relative h-screen w-full overflow-hidden" id="#">
       {/* Background gallery with blur effect */}
       <div className="absolute inset-0">
         {images.map((img, x) => (
@@ -62,8 +73,17 @@ const Hero = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
-            <span className="block">PROFESJONALNE</span>
-            <span className="text-highlight">DIAGNOSTYKA SAMOCHODOWA</span>
+            {title.split(' ').map((word, index) => (
+              <>
+                <span
+                  key={index}
+                  className={`inline-block px-2 ${index >= goldWordsStart ? 'text-highlight' : 'text-contrast'}`}
+                >
+                  {word}{' '}
+                </span>
+                {breakAfterWord === index && <br />}
+              </>
+            ))}
           </motion.h1>
           
           <motion.p 
@@ -72,7 +92,7 @@ const Hero = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            Nowoczesne rozwiązania i ekspercka wiedza dla Twojego pojazdu
+            {subtitle}
           </motion.p>
           
           <motion.div
@@ -80,9 +100,11 @@ const Hero = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7 }}
           >
-            <button className="bg-action hover:bg-action/90 text-light font-bold py-4 px-10 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-              UMÓW DIAGNOSTYKĘ
-            </button>
+            <a href={ctaLink}>
+              <button className="bg-action hover:bg-action/90 text-light font-bold py-4 px-10 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                {ctaText}
+              </button>
+            </a>
           </motion.div>
         </motion.div>
       </div>

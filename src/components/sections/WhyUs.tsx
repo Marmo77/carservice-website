@@ -69,3 +69,4 @@ export const WhyUs = () => {
     </section>
   );
 };
+export default WhyUs;
