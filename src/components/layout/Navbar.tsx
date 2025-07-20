@@ -3,7 +3,7 @@ import { FiMenu, FiX } from 'react-icons/fi';
 import { FaFacebookF, FaInstagram } from 'react-icons/fa';
 import {motion, AnimatePresence} from 'framer-motion'
 import { HiOutlinePhone, HiOutlineLocationMarker } from 'react-icons/hi';
-
+import { facebookUrl, GoogleMaps, instagramUrl, phoneNumber} from '../../data/data'
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -43,21 +43,26 @@ const Navbar = () => {
       <div className="bg-gradient-to-r from-primary to-secondary border-b border-border/50">
         <div className="max-w-site mx-auto px-4 py-2 flex justify-between items-center">
           <div className="flex items-center gap-6 text-sm">
-            <div className="flex items-center gap-2 group">
-              <HiOutlinePhone className="text-highlight transition-all group-hover:text-contrast" />
-              <span className="group-hover:text-contrast transition-all">691 542 870</span>
+            <a href={`tel:+48${phoneNumber.replace(/\s/g, '')}`}>
+              <div className="flex items-center gap-2 group">
+                  <HiOutlinePhone className="text-highlight transition-all group-hover:text-contrast" />
+                  <span className="group-hover:text-contrast transition-all">{phoneNumber}</span>
+              </div>
+            </a>
+            <a href={`${GoogleMaps}`} target='_blank'>
+              <div className="flex items-center gap-2 group">
+                <HiOutlineLocationMarker className="text-highlight transition-all group-hover:text-contrast" />
+                <span className="group-hover:text-contrast transition-all">Dojazd do nas</span>
+              </div>
+            </a>
             </div>
-            <div className="flex items-center gap-2 group">
-              <HiOutlineLocationMarker className="text-highlight transition-all group-hover:text-contrast" />
-              <span className="group-hover:text-contrast transition-all">Dojazd do nas</span>
-            </div>
-          </div>
           
           <div className="flex gap-4">
-            <a href="#" className="p-2 rounded-full bg-surface hover:bg-highlight transition-all group">
+            {/* Social Media Icons */}
+            <a href={`${facebookUrl}`} target='_blank' className="p-2 rounded-full bg-surface hover:bg-highlight transition-all group">
               <FaFacebookF className="text-light group-hover:text-primary" />
             </a>
-            <a href="#" className="p-2 rounded-full bg-surface hover:bg-highlight transition-all group">
+            <a href={`${instagramUrl}`} target='_blank' className="p-2 rounded-full bg-surface hover:bg-highlight transition-all group">
               <FaInstagram className="text-light group-hover:text-primary" />
             </a>
           </div>

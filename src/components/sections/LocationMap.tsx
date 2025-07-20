@@ -1,4 +1,5 @@
 import { HiOutlineLocationMarker, HiOutlineClock, HiOutlinePhone } from 'react-icons/hi';
+import { address, companyMail, phoneNumber } from '../../data/data';
 
 export const LocationMap = () => {
   return (
@@ -9,7 +10,8 @@ export const LocationMap = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="h-96 rounded-xl overflow-hidden">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2443.548386139574!2d21.017015315796813!3d52.23208697976097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc669a869f01%3A0x5a7eac2441c130d5!2sWarszawa!5e0!3m2!1sen!2spl!4v1620000000000!5m2!1sen!2spl"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d93642.2390801581!2d14.4947444!3d53.4109703!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4700a6527eb6cb2d%3A0xd9e58ed9ad1b8f7f!2sMercedes-Benz%20Mojsiuk%20Autoryzowany%20Dealer%20i%20Serwis%20Szczecin!5e1!3m2!1spl!2spl!4v1752951866193!5m2!1spl!2spl"
+              // referrerpolicy="no-referrer-when-downgrade"
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -25,8 +27,8 @@ export const LocationMap = () => {
                 <HiOutlineLocationMarker className="text-highlight text-xl mt-1" />
                 <div>
                   <h3 className="text-xl font-bold mb-1">Adres</h3>
-                  <p className="text-light">ul. Przemysłowa 12</p>
-                  <p className="text-light">00-001 Warszawa</p>
+                  <p className="text-light">{address.slice(0, address.indexOf(","))}</p>
+                  <p className="text-light">{address.slice(address.indexOf(",") +1).trim()}</p>
                 </div>
               </div>
               
@@ -43,8 +45,8 @@ export const LocationMap = () => {
                 <HiOutlinePhone className="text-highlight text-xl mt-1" />
                 <div>
                   <h3 className="text-xl font-bold mb-1">Kontakt</h3>
-                  <p className="text-light">882 917 789</p>
-                  <p className="text-light">kontakt@auto-scan.pl</p>
+                  <p className="text-light">{phoneNumber}</p>
+                  <p className="text-light">{companyMail}</p>
                 </div>
               </div>
               
