@@ -9,8 +9,6 @@ import Contact from "../components/sections/Contact";
 import FAQ from "../components/sections/FAQ";
 import { phoneNumber } from "../data/data";
 import CarTowing from "../components/sections/CarTowing";
-import CarTowing2 from "../components/sections/CarTowing2";
-
 const ServicePage = () => {
   return (
     <main>
@@ -32,7 +30,6 @@ const ServicePage = () => {
 
       {/* Car Towing  */}
       <CarTowing />
-      <CarTowing2 />
       {/* Why Choose Us - enhanced for Volvo */}
       <WhyUs />
 
